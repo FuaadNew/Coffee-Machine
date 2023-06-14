@@ -92,10 +92,8 @@ while on:
         drink = MENU[choice]
         cost = MENU[choice]["cost"]
         if is_resource_sufficient(drink["ingredients"]):
-            process_coins(cost)
-            make_coffee(drink["ingredients"])
-
-
+            if process_coins(cost):
+                make_coffee(drink["ingredients"])
 
 
 
